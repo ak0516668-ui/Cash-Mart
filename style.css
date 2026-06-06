@@ -1,0 +1,227 @@
+/* ==========================================
+   1. GLOBAL RESETS & VARIABLES
+   ========================================== */
+:root {
+  --primary: #6366f1;       /* Premium Indigo */
+  --primary-hover: #4f46e5; /* Darker Indigo */
+  --accent: #f43f5e;        /* Rose highlight */
+  --bg-main: #f8fafc;       /* Clean off-white background */
+  --bg-card: #ffffff;       /* Pure white for cards */
+  --text-dark: #0f172a;     /* Deep slate for readability */
+  --text-muted: #64748b;    /* Elegant muted gray text */
+  --radius-lg: 16px;        /* Smooth modern corners */
+  --radius-sm: 8px;
+  --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  --shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.05);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+body {
+  background-color: var(--bg-main);
+  color: var(--text-dark);
+  line-height: 1.5;
+}
+
+/* ==========================================
+   2. PREMIUM NAVIGATION BAR
+   ========================================== */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 8%;
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(12px); /* Trendy frosted glass effect */
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.04);
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+}
+
+.logo span {
+  color: var(--primary);
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 32px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: var(--text-muted);
+  font-weight: 500;
+  transition: var(--transition);
+}
+
+.nav-links a:hover {
+  color: var(--primary);
+}
+
+.cart-icon a {
+  text-decoration: none;
+  font-size: 20px;
+  background: #f1f5f9;
+  padding: 10px 16px;
+  border-radius: 50px;
+  transition: var(--transition);
+}
+
+.cart-icon a:hover {
+  background: var(--primary);
+  color: white;
+}
+
+/* ==========================================
+   3. LUXURY HERO BANNER
+   ========================================== */
+.hero {
+  background: linear-gradient(135deg, rgba(15,23,42,0.85) 0%, rgba(99,102,241,0.4) 100%), 
+              url('https://unsplash.com') center/cover;
+  height: 70vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  text-align: center;
+  padding: 0 20px;
+}
+
+.hero-content h1 {
+  font-size: 3.5rem;
+  font-weight: 800;
+  letter-spacing: -1px;
+  margin-bottom: 16px;
+}
+
+.hero-content p {
+  font-size: 1.25rem;
+  color: #cbd5e1;
+  margin-bottom: 32px;
+}
+
+.btn {
+  background-color: var(--primary);
+  color: white;
+  padding: 14px 36px;
+  text-decoration: none;
+  border-radius: var(--radius-lg);
+  font-weight: 600;
+  box-shadow: 0 4px 14px rgba(99, 102, 241, 0.4);
+  transition: var(--transition);
+  display: inline-block;
+}
+
+.btn:hover {
+  background-color: var(--primary-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(99, 102, 241, 0.6);
+}
+
+/* ==========================================
+   4. PRODUCT GRID & CARD DESIGN
+   ========================================== */
+.container {
+  max-width: 1200px;
+  margin: 80px auto;
+  padding: 0 24px;
+}
+
+.section-title {
+  font-size: 2rem;
+  font-weight: 800;
+  margin-bottom: 40px;
+  letter-spacing: -0.5px;
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 32px;
+}
+
+.product-card {
+  background: var(--bg-card);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  transition: var(--transition);
+  border: 1px solid rgba(0, 0, 0, 0.02);
+}
+
+.product-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.1);
+}
+
+.product-card img {
+  width: 100%;
+  height: 320px;
+  object-fit: cover; /* Prevents image stretching */
+  transition: var(--transition);
+}
+
+.product-card:hover img {
+  transform: scale(1.03); /* Subtle zoom effect */
+}
+
+.product-info {
+  padding: 24px;
+  text-align: left;
+}
+
+.product-info h3 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--text-dark);
+  margin-bottom: 8px;
+}
+
+.price {
+  color: var(--accent);
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 16px;
+}
+
+.add-to-cart {
+  background-color: #f1f5f9;
+  color: var(--text-dark);
+  border: none;
+  padding: 12px;
+  width: 100%;
+  border-radius: var(--radius-sm);
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.add-to-cart:hover {
+  background-color: var(--text-dark);
+  color: white;
+}
+
+/* ==========================================
+   5. MINIMALIST FOOTER
+   ========================================== */
+footer {
+  background-color: #0f172a;
+  color: #94a3b8;
+  text-align: center;
+  padding: 40px 20px;
+  margin-top: 100px;
+  font-size: 0.95rem;
+}
